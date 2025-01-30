@@ -1,0 +1,35 @@
+.table {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    transition: background-color 0.3s ease;
+}
+
+/* Row 1: All circles turn green on hover */
+.row1:hover .circle {
+    background-color: green;
+}
+
+/* Default state for row2 circles */
+.row2 .circle {
+    background-color: white;
+}

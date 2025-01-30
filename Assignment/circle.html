@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Table</title>
+    <link rel="stylesheet" href="circlestyle.css">
+</head>
+<body>
+    <div class="table">
+        <!-- Row 1 -->
+        <div class="cell row1"><div class="circle"></div></div>
+        <div class="cell row1"><div class="circle"></div></div>
+        <div class="cell row1"><div class="circle"></div></div>
+        <!-- Row 2 -->
+        <div class="cell row2"><div class="circle"></div></div>
+        <div class="cell row2"><div class="circle"></div></div>
+        <div class="cell row2"><div class="circle"></div></div>
+    </div>
+
+    <script>
+        // Get all circles in row 2
+        const row2Circles = document.querySelectorAll('.row2 .circle');
+
+        // Add event listeners to each circle in row 2
+        row2Circles.forEach(circle => {
+            circle.addEventListener('mouseenter', () => {
+                row2Circles.forEach(otherCircle => {
+                    if (otherCircle !== circle) {
+                        otherCircle.style.backgroundColor = 'orange';
+                    }
+                });
+            });
+
+            // Reset the colors when mouse leaves
+            circle.addEventListener('mouseleave', () => {
+                row2Circles.forEach(otherCircle => {
+                    otherCircle.style.backgroundColor = 'white';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

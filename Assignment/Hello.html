@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+</head>
+<body align="center">
+
+    <h1>Hello, World!</h1>
+    <p>Welcome to the Hello World page. You are logged in!</p>
+
+    <button onclick="logout()">Logout</button>
+
+    <script>
+        let loggedInUser = localStorage.getItem('loggedInUser');
+        if (!loggedInUser) {
+            alert("You must log in first!");
+            window.location.href = "login.html"; // Redirect to login
+        }
+
+        function logout() {
+            localStorage.removeItem('loggedInUser');
+            alert("Logged out successfully!");
+            window.location.href = "login.html";
+        }
+    </script>
+
+</body>
+</html>
